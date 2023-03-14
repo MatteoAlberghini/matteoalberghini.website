@@ -17,7 +17,7 @@
   /* FONTS */
   @font-face {
     font-family: 'Dosis';
-    src: url('/fonts/Dosis-Medium.ttf');
+    src: url('fonts/Dosis-Medium.ttf');
     src: local('Dosis'), local('Dosis Medium'), local('Dosis-Medium');
     font-weight: 400;
     font-style: normal;
@@ -25,7 +25,7 @@
   }
   @font-face {
     font-family: 'Dosis';
-    src: url('/fonts/Dosis-SemiBold.ttf');
+    src: url('fonts/Dosis-SemiBold.ttf');
     src: local('Dosis-SemiBold'), local('Dosis SemiBold');
     font-weight: 600;
     font-style: normal;
