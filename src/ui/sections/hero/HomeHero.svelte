@@ -20,8 +20,8 @@
       working on headless wordpress with nextjs.
     </GlitchText>
     <div class="buttons-container">
-      <GlitchButton type="primary" href="/projects">My projects and code snippets</GlitchButton>
-      <GlitchButton marginLeft="32px" type="secondary" href="/something">Something else CTA</GlitchButton>
+      <GlitchButton type="primary" href="/">My projects and code snippets</GlitchButton>
+      <GlitchButton marginLeft="32px" type="secondary" href="/">Something else CTA</GlitchButton>
     </div>
   </div>
 </Section>
