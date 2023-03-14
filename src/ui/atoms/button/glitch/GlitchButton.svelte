@@ -9,10 +9,10 @@
   export let type: AtomType = 'primary'
   export let href: string = ''
   export let target: string = '_self'
-
+  export let text: string = ''
   /* constants */
   const primary: Color = MapTypeToPrimaryColor[type]
-  const secondary: Color = MapTypeToSecondaryColor[type] 
+  const secondary: Color = MapTypeToSecondaryColor[type]
 </script>
 
 <!-- Template -->
@@ -23,9 +23,9 @@
   style:--primary={primary}
   style:--secondary={secondary}
 >
-  <span class="before-span"><slot /></span>
-  <span class="main-span"><slot /></span>
-  <span class="after-span"><slot /></span>
+  <span class="before-span">{text}</span>
+  <span class="main-span">{text}</span>
+  <span class="after-span">{text}</span>
 </a>
 
 <!-- Style -->

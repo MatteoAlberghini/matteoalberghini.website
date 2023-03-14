@@ -1,35 +1,17 @@
 <!-- Script -->
 <script lang="ts">
-	/* imports */
-  import { slide } from "../../../transitions/slide"
-
   /* props */
   export let href: string = ''
   export let target: string = '_self'
-  /* state */
-  let mouseEnter: boolean = false
-  /* refs */
-  let linkRef: HTMLAnchorElement | null = null
-  let gradientRef: HTMLDivElement | null = null
-
-  /* callbacks */
-  const onMouseEnter = () => { mouseEnter = true }
-  const onMouseLeave = () => { mouseEnter = false }
-  const onMouseMove = (e: MouseEvent) => {
-    if (!linkRef || !gradientRef) { return }
-    const decimal: number = e.clientX / linkRef.offsetWidth
-    const adjustablePercentage: number = 80 * decimal
-    const percentage: string = `${105 + adjustablePercentage}%`
-    gradientRef.animate({ backgroundSize: percentage }, { duration: 100, fill: 'forwards' })
-  }
+  export let text: string = ''
+  export let index: number = 0
 </script>
 
 <!-- Template -->
-<a {href} {target} on:mouseenter={onMouseEnter} on:mouseleave={onMouseLeave} on:mousemove={onMouseMove} bind:this={linkRef}>
-  {#if mouseEnter}
-    <div bind:this={gradientRef} transition:slide={{ x: '100%', duration: 230 }} class="gradient" />
-  {/if}
-  <span><slot /></span>
+<a {href} {target} style:border-top-width={index === 0 ? '1px' : '0px'}>
+  <span class="before-span" style:border-top-width={index === 0 ? '1px' : '0px'}>{text}</span>
+  <span class="main-span">{text}</span>
+  <span class="after-span" style:border-top-width={index === 0 ? '1px' : '0px'}>{text}</span>
 </a>
 
 <!-- Style -->
@@ -46,8 +28,9 @@
     /* size */
     width: 100%;
     /* borders */
-    border-top: 1px solid var(--main-white);
-    border-bottom: 1px solid var(--main-white);
+    border-color: var(--main-white);
+    border-style: solid;
+    border-bottom-width: 1px;
     /* color */
     color: var(--main-white);
     /* font */
@@ -57,19 +40,60 @@
     letter-spacing: 0.17rem;
     /* position */
     position: relative;
+    overflow: hidden;
   }
-  .gradient {
-    /* position */
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
+  .main-span {
+    /* text */
+    text-transform: uppercase;
+  }
+  .after-span, .before-span {
+    /* text */
+    text-transform: uppercase;
     /* size */
     height: 100%;
     width: 100%;
-    /* background */
-    opacity: 0.55;
-    background: linear-gradient(to right, transparent, var(--main-secondary), var(--main-primary));
-    background-size: 105%;
+    /* position */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -2;
+    /* margins */
+    padding-left: 64px;
+    /* flex */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .after-span {
+    /* border */
+    border-bottom-width: 1px;
+    border-color: var(--main-primary);
+    border-style: solid;
+    /* color */
+    color: var(--main-primary);
+  }
+  .before-span {
+    /* border */
+    border-bottom-width: 1px;
+    border-color: var(--main-secondary);
+    border-style: solid;
+    /* color */
+    color: var(--main-secondary);
+  }
+  /* Button hover */
+  a:hover .after-span {
+    animation: glitch 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  }
+  a:hover .before-span {
+    animation: glitch 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  }
+  /* Keyframes */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
   }
 </style>

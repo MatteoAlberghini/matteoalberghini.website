@@ -24,11 +24,13 @@
 {#if visible}
 <div transition:slide={{ x: '100%', duration: 170, opacity: 1 }} class="drawer">
   <nav>
-    <NavigationLink>Projects</NavigationLink>
-    <NavigationLink>Code snippets</NavigationLink>
-    <NavigationLink>Contacts</NavigationLink>
+    <NavigationLink index={0} text="Projects" />
+    <NavigationLink index={1} text="Code snippets" />
+    <NavigationLink index={2} text="Contacts" />
   </nav>
-  <GlitchLink href="mailto:matteo.alberghini.96@gmail.com">matteo.alberghini.96@gmail.com</GlitchLink>
+  <div class="under-nav-container">
+    <GlitchLink href="mailto:matteo.alberghini.96@gmail.com" text="matteo.alberghini.96@gmail.com" />
+  </div>
 </div>
 {/if}
 
@@ -92,5 +94,17 @@
     flex-direction: column;
     /* position */
     overflow-y: scroll;
+  }
+  .under-nav-container {
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: flex-end;
+    /* size */
+    width: 100%;
+    /* margins */
+    margin-top: 32px;
+    padding-right: 32px;
   }
 </style>

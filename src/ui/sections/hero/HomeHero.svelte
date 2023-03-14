@@ -3,7 +3,6 @@
   /* imports */
   import GlitchButton from "../../atoms/button/glitch/GlitchButton.svelte"
   import GlitchHeading from "../../atoms/text/glitch/GlitchHeading.svelte"
-	import GlitchLink from "../../atoms/text/glitch/GlitchLink.svelte"
 	import GlitchSpan from "../../atoms/text/glitch/GlitchSpan.svelte"
 	import GlitchText from "../../atoms/text/glitch/GlitchText.svelte"
   import Section from "../../layouts/Section.svelte"
@@ -14,14 +13,13 @@
   <div class="content-container">
     <GlitchSpan>Welcome to my website...</GlitchSpan>
     <GlitchHeading>Hi, I'm Matteo Alberghini :)</GlitchHeading>
-    <GlitchText marginTop="48px">
+    <GlitchText marginTop="52px">
       European developer, currently based in the Netherlands. I love building websites, apps & video games. I code scripts & build IOT devices.
-      Currently frontend developer for <GlitchLink href="https://o9solutions.com" target="_blank">o9Solutions</GlitchLink>,
-      working on headless wordpress with nextjs.
+      Currently frontend developer for, working on headless wordpress with nextjs.
     </GlitchText>
     <div class="buttons-container">
-      <GlitchButton type="primary" href="/">My projects and code snippets</GlitchButton>
-      <GlitchButton marginLeft="32px" type="secondary" href="/">Something else CTA</GlitchButton>
+      <GlitchButton type="primary" href="/" text="My projects and code snippets" />
+      <GlitchButton marginLeft="32px" type="secondary" href="/" text="Something else CTA" />
     </div>
   </div>
 </Section>
@@ -47,6 +45,6 @@
     align-items: flex-start;
     justify-content: center;
     /* margins */
-    padding-top: 24px;
+    padding-top: 28px;
   }
 </style>

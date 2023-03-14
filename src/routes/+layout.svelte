@@ -50,6 +50,7 @@
     --main-primary: rgba(15, 210, 255, 1);
     --main-secondary: rgba(246, 0, 153, 1);
     --main-tertiary: rgba(255, 210, 0, 1);
+    --main-gray: #808080;
     /* fonts */
     --text-heading-h1: 5.5rem;
     --text-body-large: 1.12rem;
@@ -91,7 +92,7 @@
   }
   :global(::-webkit-scrollbar) {
     /* size */
-    width: 3px;
+    width: 2px;
   }
   :global(::-webkit-scrollbar-track) {
     /* colors */
@@ -99,7 +100,7 @@
   }
   :global(::-webkit-scrollbar-thumb) {
     /* colors */
-    background: var(--main-off-white);
+    background: var(--main-gray);
     /* borders */
     border-radius: 0px;
   }
