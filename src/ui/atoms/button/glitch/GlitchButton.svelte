@@ -50,7 +50,7 @@
     border-color: var(--main-white);
     /* font */
     font-size: var(--text-body);
-    font-weight: 400;
+    font-weight: 300;
     /* position */
     position: relative;
     z-index: 1;

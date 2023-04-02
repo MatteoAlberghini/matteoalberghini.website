@@ -36,7 +36,7 @@
     /* font */
     font-size: var(--text-heading-h1);
     line-height: 115%;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.17rem;
     /* position */
     position: relative;

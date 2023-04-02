@@ -42,5 +42,7 @@
     text-transform: uppercase;
     /* color */
     color: var(--main-primary);
+    /* font */
+    font-weight: 300;
   }
 </style>

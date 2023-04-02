@@ -11,5 +11,7 @@
     /* text */
     text-shadow: 1px 1px var(--main-secondary), -1px -1px var(--main-primary), -1px 0px var(--main-tertiary);
     text-transform: uppercase;
+    /* fonts */
+    font-weight: 300;
   }
 </style>

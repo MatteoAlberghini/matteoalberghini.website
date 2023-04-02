@@ -11,7 +11,7 @@
     text-transform: uppercase;
     /* font */
     font-size: var(--text-heading-h1);
-    font-weight: 400;
+    font-weight: 300;
     line-height: 115%;
     letter-spacing: 0.17rem;
     /* animation */
