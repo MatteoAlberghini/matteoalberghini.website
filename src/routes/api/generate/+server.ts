@@ -1,5 +1,5 @@
 /* Imports */
-import { client } from '../../../../../../Projects/matteoalberghini.website/src/database/client'
+import { client } from "../../../database/client"
 
 /* Body for request */
 type Body = {
