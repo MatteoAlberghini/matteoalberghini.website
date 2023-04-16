@@ -1,7 +1,6 @@
 <!-- Scripts -->
 <script>
 	import Navigation from '../ui/layouts/Navigation.svelte'
-  import '$lib/styles/fonts.css'
 </script>
 
 <!-- Template -->
@@ -23,7 +22,7 @@
     --main-white: #FFFFFF;
     --main-off-white: #F2F2F2;
     --main-primary: rgba(15, 210, 255, 1);
-    /* --main-secondary: rgba(246, 0, 153, 1); */
+    --main-secondary: rgba(246, 0, 153, 1);
     --main-tertiary: rgba(255, 210, 0, 1);
     --main-gray: #808080;
     /* fonts */
