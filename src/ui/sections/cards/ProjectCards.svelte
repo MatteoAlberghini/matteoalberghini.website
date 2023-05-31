@@ -10,22 +10,37 @@
     {
       id: 1,
       image: '/test.jpg',
+      title: 'Nextjs && Headless wordpress',
+      type: 'project',
+      intro: 'To escape a deluge of generated content, companies are screening your resumes and documents using AI. But there is a way you can still stand out and get your dream job: Prompt Injection. '
     },
     {
       id: 0,
-      image: '/test.jpg',
+      image: '/code1.avif',
+      title: 'News scraper on a timer',
+      type: 'project',
+      intro: 'To escape a deluge of generated content, companies are screening your resumes and documents using AI. '
     },
     {
       id: 2,
-      image: '/test.jpg',
+      image: '/code2.avif',
+      title: 'Parallax effect on images',
+      type: 'snippet',
+      intro: 'To escape a deluge of generated content, companies are screening your resumes and documents using AI. '
     },
     {
       id: 2,
-      image: '/test.jpg',
+      image: '/code3.avif',
+      title: 'Custom cursor in React',
+      type: 'snippet',
+      intro: 'To escape a deluge of generated content, companies are screening your resumes and documents using AI. '
     },
     {
       id: 2,
-      image: '/test.jpg',
+      image: '/code4.avif',
+      title: 'Detect autofill && trigger animations off of it in React',
+      type: 'project',
+      intro: 'To escape a deluge of generated content, companies are screening your resumes and documents using AI. '
     },
   ]
 </script>
@@ -34,7 +49,7 @@
 <Section>
   <div class="cards-container">
     {#each cards as card}
-      <ProjectCard image={card.image} />
+      <ProjectCard image={card.image} title={card.title} type={card.type} intro={card.intro} />
     {/each}
   </div>
 </Section>
@@ -51,7 +66,7 @@
     column-gap: 16px;
     row-gap: 24px;
     /* margins */
-    margin-top: 128px;
+    margin-top: 168px;
   }
   @media only screen and (min-width: 600px) {
     .cards-container {

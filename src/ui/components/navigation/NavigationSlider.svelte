@@ -13,9 +13,17 @@
     visible = !visible
     document.body.style.overflowY = visible ? 'hidden' : 'unset'
   }
+  const closeDrawer = () => {
+    visible = false
+    document.body.style.overflowY = 'unset'
+  }
+  const onKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') { closeDrawer() }
+  }
 </script>
 
 <!-- Template -->
+<svelte:window on:keydown={onKeyDown} />
 <button aria-label="navigation menu" on:click={toggleDrawer}>
   <svg viewBox="0 0 27 6" fill="none" stroke="var(--main-white)" width="30px">
     <path d="M.867.711h25.634M.867 5.25h21.429" />
@@ -24,12 +32,12 @@
 {#if visible}
 <div transition:slide={{ x: '100%', duration: 170, opacity: 1 }} class="drawer">
   <nav>
-    <NavigationLink index={0} text="Projects" />
-    <NavigationLink index={1} text="Code snippets" />
+    <NavigationLink index={0} text="Projects && Code Snippets" />
+    <NavigationLink index={1} text="Notebook" />
     <NavigationLink index={2} text="Contacts" />
   </nav>
   <div class="under-nav-container">
-    <GlitchLink href="mailto:matteo.alberghini.96@gmail.com" text="matteo.alberghini.96@gmail.com" />
+    <GlitchLink href="mailto:alberghini.matteo.96@gmail.com" text="alberghini.matteo.96@gmail.com" />
   </div>
 </div>
 {/if}
@@ -45,6 +53,9 @@
     border-radius: 0;
     /* color */
     background-color: transparent;
+    /* position */
+    position: absolute;
+    z-index: 3;
   }
   button:hover {
     /* cursor */
@@ -75,9 +86,10 @@
     height: 100%;
     min-height: 100vh;
     /* position */
-    position: fixed;
+    position: absolute;
     left: 0;
-    top: 80px;
+    top: 0;
+    z-index: 2;
     /* color */
     background-color: var(--main-black);
     /* margins */
@@ -94,6 +106,7 @@
     flex-direction: column;
     /* position */
     overflow-y: scroll;
+    margin-top: 32px;
   }
   .under-nav-container {
     /* flex */

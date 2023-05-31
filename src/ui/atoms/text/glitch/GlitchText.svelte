@@ -20,7 +20,7 @@
     text-shadow: 1px 1px var(--main-secondary), -1px -1px var(--main-primary), -1px 0px var(--main-tertiary);
     /* font */
     font-size: var(--text-body-large);
-    font-weight: 300;
+    font-weight: 200;
     line-height: 145%;
     letter-spacing: 0.127rem;
     /* margins */

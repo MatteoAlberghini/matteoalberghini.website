@@ -1,16 +1,5 @@
-<!-- Scripts -->
-<script>
-	import Navigation from '../ui/layouts/Navigation.svelte'
-</script>
-
 <!-- Template -->
-<Navigation />
-<main>
-  <slot />
-</main>
-<footer>
-  <p>footer</p>
-</footer>
+<slot />
 
 <!-- Style -->
 <style>
@@ -24,9 +13,12 @@
     --main-primary: rgba(15, 210, 255, 1);
     --main-secondary: rgba(246, 0, 153, 1);
     --main-tertiary: rgba(255, 210, 0, 1);
+    --main-additional: #EE7B30;
     --main-gray: #808080;
     /* fonts */
     --text-heading-h1: 5.5rem;
+    --text-heading-h2: 3.2rem;
+    --text-heading-h3: 2.2rem;
     --text-body-large: 1.12rem;
     --text-body: 1.063rem;
   }
@@ -80,7 +72,7 @@
   }
 
   /* PAGE SPECIFIC */
-  main {
+  :global(main) {
     /* size */
     min-height: 100vh;
     /* flex */
